@@ -17,6 +17,13 @@ const App = () => {
       .catch((error: any) => {
         console.error('Error checking power saving mode:', error);
       });
+      PowerSavingModeModule.getBatteryLevel((error: any, batteryLevel: any) => {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log('Battery level:', batteryLevel);
+        }
+      });
   };
 
 
